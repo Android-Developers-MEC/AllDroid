@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/app_flow"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/roadMapFragment">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -32,6 +32,9 @@
         <action
             android:id="@+id/action_roadMapFragment_to_roadMapComponents"
             app:destination="@id/roadMapComponents" />
+        <argument
+            android:name="clickId"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/roadMapComponents"

@@ -3,10 +3,14 @@ package com.example.alldroid;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import com.google.android.material.card.MaterialCardView;
 
 
 /**
@@ -14,7 +18,7 @@ import android.view.ViewGroup;
  * Use the {@link RoadMapFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class RoadMapFragment extends Fragment {
+public class RoadMapFragment extends Fragment implements View.OnClickListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -37,6 +41,13 @@ public class RoadMapFragment extends Fragment {
      * @return A new instance of fragment RoadMapFragment.
      */
     // TODO: Rename and change types and number of parameters
+
+
+
+    MaterialCardView bedCard ,intCard ,advCard;
+
+
+
     public static RoadMapFragment newInstance(String param1, String param2) {
         RoadMapFragment fragment = new RoadMapFragment();
         Bundle args = new Bundle();
@@ -59,6 +70,42 @@ public class RoadMapFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_road_map, container, false);
+        View view = inflater.inflate(R.layout.fragment_road_map, container, false);
+
+        bedCard = view.findViewById(R.id.begCard);
+        intCard = view.findViewById(R.id.intCard);
+        advCard = view.findViewById(R.id.advCard);
+
+        bedCard.setOnClickListener(this);
+        intCard.setOnClickListener(this);
+        advCard.setOnClickListener(this);
+
+
+        return view;
+    }
+
+    @Override
+    public void onClick(View view) {
+
+        int id=0;
+
+        switch (view.getId())
+        {
+            case R.id.begCard : id=1;
+                                break;
+
+            case R.id.intCard : id=2;
+                                break;
+
+            case R.id.advCard : id=3;
+                                break;
+            default: id=0;
+
+        }
+
+        Bundle bundle = new Bundle();
+        bundle.putInt("ClickId",id);
+        Navigation.findNavController(view).navigate(R.id.action_roadMapFragment_to_roadMapComponents,bundle);
+
     }
 }

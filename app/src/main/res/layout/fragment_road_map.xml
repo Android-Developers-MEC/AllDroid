@@ -1,14 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RoadMapFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.card.MaterialCardView
+
+            android:id="@+id/begCard"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:backgroundTint="#0091EA"
+            android:layout_margin="30dp">
+
+            <ImageView
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_margin="20dp"
+                android:src="@drawable/flame_remote_working"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BEGINNER"
+                android:textSize="28sp"
+                android:layout_marginStart="150dp"
+                android:layout_gravity="center_vertical"
+                android:textColor="#000000"
+                android:fontFamily="sans-serif-medium"/>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/intCard"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:backgroundTint="#2962FF"
+            android:layout_margin="30dp">
+
+            <ImageView
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_margin="20dp"
+                android:src="@drawable/flame_upgrade"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="INTERMEDIATE"
+                android:textSize="28sp"
+                android:layout_marginStart="150dp"
+                android:layout_gravity="center_vertical"
+                android:textColor="#000000"
+                android:fontFamily="sans-serif-medium"/>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/advCard"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:backgroundTint="#304FFE"
+            android:layout_margin="30dp">
+
+            <ImageView
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_margin="20dp"
+                android:src="@drawable/flame_success"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ADVANCED"
+                android:textSize="28sp"
+                android:layout_marginStart="150dp"
+                android:layout_gravity="center_vertical"
+                android:textColor="#000000"
+                android:fontFamily="sans-serif-medium"/>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
 
 </FrameLayout>

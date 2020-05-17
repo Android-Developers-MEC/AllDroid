@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 
 /**
@@ -37,6 +38,11 @@ public class RoadMapComponents extends Fragment {
      * @return A new instance of fragment RoadMapComponents.
      */
     // TODO: Rename and change types and number of parameters
+
+
+    int id;
+
+
     public static RoadMapComponents newInstance(String param1, String param2) {
         RoadMapComponents fragment = new RoadMapComponents();
         Bundle args = new Bundle();
@@ -50,8 +56,7 @@ public class RoadMapComponents extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            id = getArguments().getInt("ClickId");
         }
     }
 
@@ -59,6 +64,21 @@ public class RoadMapComponents extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_road_map_components, container, false);
+        View view = inflater.inflate(R.layout.fragment_road_map_components, container, false);
+
+        switch (id)
+        {
+            case 1 : Toast.makeText(view.getContext(),"Hello beginner", Toast.LENGTH_SHORT).show();
+                    break;
+
+            case 2 :Toast.makeText(view.getContext(),"Hello intermediate", Toast.LENGTH_SHORT).show();
+                    break;
+
+            case 3 : Toast.makeText(view.getContext(),"Hello Advanced", Toast.LENGTH_SHORT).show();
+                    break;
+        }
+
+
+        return view;
     }
 }
